@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet.js ile Poligon ve Çizgi Çizme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="map"></div>
+    <div class="coords-container" id="polygon-coords-container">
+        <div id="coords-content"></div>
+        <span class="close-btn" onclick="closeCoordsContainer()">X</span>
+    </div>
+    <div class="coords-container" id="polyline-coords-container">
+        <div id="polyline-coords-content"></div>
+        <span class="close-btn" onclick="closePolylineCoordsContainer()">X</span>
+    </div>
+    <button class="zoom-btn" onclick="showZoomInput()"><i class="fas fa-search-location"></i></button>
+    <div class="zoom-input-container" id="zoom-input-container">
+        <input type="text" id="lat-input" placeholder="Enlem">
+        <input type="text" id="lng-input" placeholder="Boylam">
+        <button onclick="zoomToCoordinates()">Tamam</button>
+    </div>
+    <button class="register-btn" onclick="redirectToRegister()"><i class="fas fa-user-plus"></i></button>
+    
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

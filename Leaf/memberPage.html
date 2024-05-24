@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet.js ile Poligon ve Çizgi Çizme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <div id="fetchSPTDataButton">ADIYAMAN</div>
+    <div id="map"></div>
+
+    <!-- Yeni veri ekleme butonu -->
+    <button class="add-data-btn" onclick="showDataInputForm()">ADD</button>
+
+    <!-- Veri girişi formu -->
+    <div class="data-input-container" id="data-input-container">
+        <span class="close-btn" onclick="closeDataInputForm()">X</span>
+        <input type="text" id="input-latitude" placeholder="Enlem">
+        <input type="text" id="input-longitude" placeholder="Boylam">
+        <input type="text" id="input-ground-data" placeholder="Zemin Verisi">
+        <button onclick="addLocation()">Tamam</button>
+    </div>
+    <button class="fetch-data-btn" onclick="fetchData()">GET</button>
+
+    <div class="coords-container draggable" id="polygon-coords-container">
+        <div id="coords-content"></div>
+        <span class="close-btn" onclick="closeCoordsContainer()">X</span>
+    </div>
+    <div class="coords-container draggable" id="polyline-coords-container">
+        <div id="polyline-coords-content"></div>
+        <span class="close-btn" onclick="closePolylineCoordsContainer()">X</span>
+    </div>
+    <button class="zoom-btn" onclick="showZoomInput()"><i class="fas fa-search-location"></i></button>
+    <div class="zoom-input-container" id="zoom-input-container">
+        <input type="text" id="lat-input" placeholder="Enlem">
+        <input type="text" id="lng-input" placeholder="Boylam">
+        <button onclick="zoomToCoordinates()">Tamam</button>
+    </div>
+    <button class="clear-markers-btn" onclick="clearAllMarkers()"><i class="fas fa-trash-alt"></i></button>
+    <div class="terrain-btn" onclick="changeMapStyle()">
+        <i class="fas fa-mountain"></i>
+    </div>
+    <button class="add-marker-btn" onclick="enableMarkerAdding()"><i class="fas fa-map-marker-alt"></i></button>
+    <button class="custom-marker-btn" onclick="showCustomMarkerInput()"><i class="fas fa-map-pin"></i></button>
+    <div class="custom-marker-input-container" id="custom-marker-input-container">
+        <span class="close-btn" onclick="closeCustomMarkerInput()">X</span>
+        <input type="text" id="custom-lat-input" placeholder="Enlem">
+        <input type="text" id="custom-lng-input" placeholder="Boylam">
+        <input type="text" id="custom-name-input" placeholder="İsim">
+        <button onclick="addCustomMarker()">Ekle</button>
+    </div>
+
+    <!-- Fay hatları butonu -->
+    <button class="fault-lines-btn" onclick="toggleFaultLinesTurkey()"><i class="fas fa-globe"></i> Fay Hatları</button>
+
+    <button class="earthquake-btn" onclick="fetchEarthquakeData()">
+        <i class="fas fa-exclamation-triangle"></i> Depremler
+    </button>
+
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Şehir adı">
+        <button onclick="performSearch()">Ara</button>
+    </div>
+
+
+    <button class="weather-button" onclick="showWeatherInput()">Hava Durumu</button>
+    <div id="weather-input-container">
+        <button class="close-button" onclick="hideWeatherInput()">×</button>
+        <label for="latitude">Enlem:</label>
+        <input type="text" id="latitude" name="latitude">
+        <label for="longitude">Boylam:</label>
+        <input type="text" id="longitude" name="longitude">
+        <button onclick="fetchWeatherData()">Tamam</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

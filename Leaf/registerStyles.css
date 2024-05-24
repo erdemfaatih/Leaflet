@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px; /* Padding değeri artırıldı */
+    background-color: #fff;
+    border-radius: 8px;
+    border: 2px solid #ccc; /* Kenarlık rengi ve genişliği artırıldı */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow yoğunluğu artırıldı */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Boşluk bırakma miktarı artırıldı */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; /* Boşluk bırakma miktarı artırıldı */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px; /* Padding değeri artırıldı */
+    margin: 5px 0 15px 0; /* Boşluk bırakma miktarı artırıldı */
+    border: 2px solid #aaa; /* Kenarlık rengi değiştirildi */
+    border-radius: 6px; /* Kenarlık yuvarlaklığı artırıldı */
+}
+
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge eklendi */
+}
+
+.register-btn i {
+    margin-right: 8px;
+}
+
+.register-btn:hover {
+    background-color: #218838;
+}
